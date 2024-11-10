@@ -1,11 +1,8 @@
-import '../styles/globals.css';
-import { useState } from 'react';
-import { getWeatherData } from '@/services/weatherService';
-import WeatherCardCurrent from '@/components/WeatherCardCurrent';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import HourlyForecast from '@/components/HourlyForecast';
-import DailyForecast from '@/components/DailyForecast';
+import DailyForecast from "@/components/DailyForecast";
+import HourlyForecast from "@/components/HourlyForecast";
+import WeatherCardCurrent from "@/components/WeatherCardCurrent";
+import { getWeatherData } from "@/services/weatherService";
+import { useState } from "react";
 
 const Home: React.FC = () => {
   const [city, setCity] = useState<string>('');
@@ -21,9 +18,8 @@ const Home: React.FC = () => {
   };
 
   return (
-    
-    <div className="flex flex-col min-h-screen">
-      <Header />
+
+    <div className="flex flex-col flex-grow">
       <main className="flex-grow container mx-auto p-4 text-center">
         <h1 className="text-3xl font-bold mb-4">Weather Card App</h1>
         <div className="flex justify-center mb-4">
@@ -45,7 +41,6 @@ const Home: React.FC = () => {
         {weatherData?.days && <HourlyForecast hourlyData={weatherData.days[0]?.hours} />}
         {weatherData?.days && <DailyForecast dailyData={weatherData.days} />}
       </main>
-      <Footer />
     </div>
   );
 };
