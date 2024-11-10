@@ -1,7 +1,7 @@
 import getIcon from "@/services/getIcon";
 
 interface DailyForecastProps {
-    dailyData: any[];
+    dailyData: [];
   }
   
   const DailyForecast: React.FC<DailyForecastProps> = ({ dailyData }) => {
@@ -14,10 +14,10 @@ interface DailyForecastProps {
           {dailyData.slice(0, 15).map((day, index) => (
             <div key={index} className="p-4 bg-white rounded-lg shadow-md border text-center min-w-[120px]">
               <h4 className="font-bold whitespace-nowrap">{day.datetime}</h4>
-              <p className="text-lg">{day.tempmax}°C</p>
-              <p className="text-lg">{day.tempmin}°C</p>
+              <div className="text-lg">{day.tempmax}°C</div>
+              <div className="text-lg">{day.tempmin}°C</div>
               <img src={getIcon(day.icon)} alt={day.icon} className="mx-auto mb-2" />
-              <p className="text-sm">{day.conditions}</p>
+              <div className="text-sm">{day.conditions}</div>
             </div>
           ))}
         </div>

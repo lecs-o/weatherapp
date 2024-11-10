@@ -1,7 +1,7 @@
 import getIcon from "@/services/getIcon";
 
 interface HourlyForecastProps {
-    hourlyData: any[];
+    hourlyData: [];
   }
 
   const HourlyForecast: React.FC<HourlyForecastProps> = ({ hourlyData }) => {
