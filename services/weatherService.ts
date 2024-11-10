@@ -1,5 +1,5 @@
 export const getWeatherData = async (city: string): Promise<any> => {
-    const apiKey = process.env.NEXT_PUBLIC_WEATHER_API_KEY || 'LVR245E4KHRCN84YP8L48JHZ6';
+    const apiKey = process.env.NEXT_PUBLIC_WEATHER_API_KEY || 'none';
     const endpoint = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=${apiKey}&contentType=json`;
   
     try {
