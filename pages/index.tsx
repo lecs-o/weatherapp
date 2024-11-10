@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const Home: React.FC = () => {
   const [city, setCity] = useState<string>('');
-  const [weatherData, setWeatherData] = useState<string | null>(null);
+  const [weatherData, setWeatherData] = useState<any | null>(null);
 
   const handleSearch = async () => {
     const data = await getWeatherData(city);

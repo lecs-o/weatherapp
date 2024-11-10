@@ -1,7 +1,7 @@
 import getIcon from "@/services/getIcon";
 
 interface DailyForecastProps {
-    dailyData: [];
+    dailyData: any [];
   }
   
   const DailyForecast: React.FC<DailyForecastProps> = ({ dailyData }) => {
