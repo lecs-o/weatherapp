@@ -1,4 +1,4 @@
-import getIcon from "@/services/getIcon";
+
 import { HourlyData } from "./HourlyForecast";
 import Image from 'next/image';
 export interface OneDayForecast {
