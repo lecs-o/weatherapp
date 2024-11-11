@@ -74,7 +74,7 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: test
-        run: echo ${{secrets.NEXT_PUBLIC_WEATHER_API_KEY }}
+        run: echo NEXT_PUBLIC_WEATHER_API_KEY=${{secrets.NEXT_PUBLIC_WEATHER_API_KEY }} >> .env
       - name: Build with Next.js
         env:
           NEXT_PUBLIC_WEATHER_API_KEY:  ${{ secrets.NEXT_PUBLIC_WEATHER_API_KEY }}
