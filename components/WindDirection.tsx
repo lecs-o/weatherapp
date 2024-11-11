@@ -1,23 +1,19 @@
+import { FaLocationArrow } from "react-icons/fa";
+
 interface WindDirectionProps {
-    windDirection: number;
-  }
-  
-  const WindDirection: React.FC<WindDirectionProps> = ({ windDirection }) => {
-    const arrowStyle = {
-      transform: `rotate(${windDirection}deg)`,
-      borderLeft: '10px solid transparent',
-      borderRight: '10px solid transparent',
-      borderBottom: '20px solid blue',
-      width: 0,
-      height: 0,
-      margin: '0 auto',
-    };
-  
-    return (
-          <span className="flex justify-center items-center">
-            <div style={arrowStyle}></div>
-          </span>
-    );
+  windDirection: number;
+}
+
+const WindDirection: React.FC<WindDirectionProps> = ({ windDirection }) => {
+  const arrowStyle = {
+    transform: `rotate(${windDirection - 45}deg)`,
   };
-  
-  export default WindDirection;
+
+  return (
+    <span className="ml-2">
+      <FaLocationArrow style={arrowStyle} />
+    </span>
+  );
+};
+
+export default WindDirection;
