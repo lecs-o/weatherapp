@@ -11,13 +11,13 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
-
+env:
+  NEXT_PUBLIC_WEATHER_API_KEY:  ${{ secrets.NEXT_PUBLIC_WEATHER_API_KEY }}
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
@@ -73,7 +73,11 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: test
+        run: echo NEXT_PUBLIC_WEATHER_API_KEY=${{secrets.NEXT_PUBLIC_WEATHER_API_KEY }} >> .env
       - name: Build with Next.js
+        env:
+          NEXT_PUBLIC_WEATHER_API_KEY:  ${{ secrets.NEXT_PUBLIC_WEATHER_API_KEY }}
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
