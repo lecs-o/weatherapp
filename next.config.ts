@@ -5,10 +5,6 @@ const nextConfig: NextConfig = {
   output: "standalone",
   assetPrefix: '',
   basePath: '',
-  images: {
-    loader: "akamai",
-    path: "/",
-  },
 };
 
 export default nextConfig;
