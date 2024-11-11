@@ -1,5 +1,5 @@
 import DailyForecast, { OneDayForecast } from "@/components/DailyForecast";
-import HourlyForecast, { HourlyData } from "@/components/HourlyForecast";
+import HourlyForecast from "@/components/HourlyForecast";
 import WeatherCardCurrent from "@/components/WeatherCardCurrent";
 import { getWeatherData } from "@/services/weatherService";
 import React, { useState } from "react";
@@ -14,7 +14,7 @@ interface CurrentConditions {
   winddir: number
 }
 
-interface WeatherData {
+export interface WeatherData {
   days: OneDayForecast[],
   name: string,
   currentConditions: CurrentConditions,

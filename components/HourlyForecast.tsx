@@ -1,5 +1,5 @@
 import getIcon from "@/services/getIcon";
-
+import Image from 'next/image';
 export interface HourlyData {
   datetime: string,
   temp: string,
@@ -22,7 +22,13 @@ const HourlyForecast: React.FC<HourlyForecastProps> = ({ hourlyData }) => {
           <div key={hour.datetime} className="p-4 bg-white rounded-lg shadow-md border text-center">
             <h4 className="font-bold">{hour.datetime?.slice(0, 5)}</h4>
             <p className="text-lg">{hour.temp}°C</p>
-            <img src={getIcon(hour.icon)} alt={hour.icon} className="mx-auto mb-2" />
+            <Image
+              src={getIcon(hour.icon)}
+              alt={hour.icon}
+              className="mx-auto mb-2"
+              width={50}
+              height={50}
+            />
             <p className="text-sm">{hour.conditions}</p>
           </div>
         ))}
