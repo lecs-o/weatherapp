@@ -1,6 +1,6 @@
-const getIcon = (icon: string) => {
+ const getIcon = (icon: string) => {
     const iconName = icon.toLowerCase();
-    return `/icons/${iconName}.png`
+    return `/${iconName}.png`
 }
 
 export default getIcon

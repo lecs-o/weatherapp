@@ -1,4 +1,4 @@
-
+import getIcon from "@/services/getIcon";
 import { HourlyData } from "./HourlyForecast";
 import Image from 'next/image';
 export interface OneDayForecast {
@@ -27,10 +27,10 @@ const DailyForecast: React.FC<DailyForecastProps> = ({ dailyData }) => {
             <div className="text-lg text-red-400">{day.tempmax}°C</div>
             <div className="text-lg text-blue-400">{day.tempmin}°C</div>
             <Image
-              src={`/${day.icon}.png`}
+              src={getIcon(day.icon)}
               alt={day.icon}
               className="mx-auto mb-2"
-              width={50}
+              width={50} 
               height={50}
             />
             <div className="text-sm">{day.conditions}</div>
