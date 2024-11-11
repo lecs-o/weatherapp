@@ -6,11 +6,9 @@ export const getWeatherData = async (city: string): Promise<any> => {
   try {
     const response = await fetch(endpoint);
     if (!response.ok) {
-      console.log(response)
       return { data: null, error: createErrorString(response.status) }
     }
     const data = await response.json();
-    console.log(data);
     return { data: data, error: null };
   } catch (error) {
     console.error('Failed to fetch weather data:', error);
