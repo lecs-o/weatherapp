@@ -73,6 +73,8 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: test
+        run: echo ${{secrets.NEXT_PUBLIC_WEATHER_API_KEY }}
       - name: Build with Next.js
         env:
           NEXT_PUBLIC_WEATHER_API_KEY:  ${{ secrets.NEXT_PUBLIC_WEATHER_API_KEY }}
