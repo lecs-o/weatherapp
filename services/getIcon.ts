@@ -1,6 +1,6 @@
  const getIcon = (icon: string) => {
     const iconName = icon.toLowerCase();
-    return `/${iconName}.png`
+    return `/weatherapp/${iconName}.png`
 }
 
 export default getIcon
